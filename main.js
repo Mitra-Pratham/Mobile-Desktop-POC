@@ -1,6 +1,6 @@
 import data from "./data.json" with { type: "json" };
 
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+const isMobile = /iPhone|iPad|iPod|Android|Mozilla/i.test(navigator.userAgent);
 const rootMedium = document.querySelector(':root');
 if (isMobile) {
     document.getElementById("header").innerText = "yes, Mobile so seeing cards";
