@@ -1,0 +1,27 @@
+:root{
+    --template-column:repeat(6,1fr);
+    --label-show:none;
+}
+
+
+html, body{
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+#table{
+    font-size: .75em;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap:.75em;
+    .level-1{
+        display: grid;
+        grid-template-columns: var(--template-column);
+        padding: 1em;
+        border-bottom: 1px solid #eee;
+    }
+    .label{
+        color: #777;
+        display: var(--label-show);
+    }
+}
