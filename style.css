@@ -2,12 +2,12 @@
     --base-bg: #f6faff;
     --row-card-bg: #fff;
     --row-card-radius: 12px;
-    --accent-color: 0,0,255;
+    --accent-color: 0, 0, 255;
     --border-color: #eaf1fa;
     --border-color-dark: #d5dde7;
     --template-column: repeat(6, 1fr);
     --label-show: none;
-    --isMobile:false;
+    --isMobile: false;
 }
 
 
@@ -42,15 +42,9 @@ body {
         }
     }
 
-    .row-card:hover{
+    .row-card:hover {
         border: 1px solid rgb(var(--accent-color));
-        box-shadow: 4px 4px 16px rgba(var(--accent-color),0.15);
-    }
-
-    @container style(--isMobile: true){
-        .row-card:first-child {
-            border-radius: var(--row-card-radius) var(--row-card-radius) 0 0;
-        }
+        box-shadow: 4px 4px 16px rgba(var(--accent-color), 0.15);
     }
 
     .row-card:last-child {
@@ -69,5 +63,15 @@ body {
         color: #777;
         display: var(--label-show);
         padding-right: .3em;
+    }
+}
+
+@container style(--isMobile: true) {
+    #table {
+        margin: 0 1em 0 1em;
+
+        .row-card:first-child {
+            border-radius: var(--row-card-radius) var(--row-card-radius) 0 0;
+        }
     }
 }
