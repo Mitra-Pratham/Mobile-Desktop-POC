@@ -19,9 +19,13 @@ html, body{
         grid-template-columns: var(--template-column);
         padding: 1em;
         border-bottom: 1px solid #eee;
+        .level-2{
+            display: flex;
+        }
     }
     .label{
         color: #777;
         display: var(--label-show);
+        padding-right: .3em;
     }
 }
