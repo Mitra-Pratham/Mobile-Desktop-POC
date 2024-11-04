@@ -5,7 +5,7 @@ const rootMedium = document.querySelector(':root');
 if (isMobile) {
     document.getElementById("header").innerText = "yes, Mobile so seeing cards";
     rootMedium.style.setProperty( '--template-column','repeat(1,1fr)');
-    rootMedium.style.setProperty( '--label','block');
+    rootMedium.style.setProperty( '--label-show','block');
 } else {
   document.getElementById("header").innerText = "Nope, not mobile so seeing table";
 }
