@@ -1,10 +1,8 @@
 :root {
-    --base-bg: #f6faff;
+    /* --base-bg: #f6faff; */
     --row-card-bg: #fff;
     --row-card-radius: 12px;
-    --accent-color: 0, 0, 255;
-    --border-color: #eaf1fa;
-    --border-color-dark: #d5dde7;
+    --accent-color: 0, 138, 255;
     --template-column: repeat(6, 1fr);
     --label-show: none;
     --isMobile: false;
@@ -18,27 +16,31 @@ body {
 }
 
 body {
-    background-color: var(--base-bg);
+    background-color: rgba(var(--accent-color), 0.05);
 }
 
 #table {
     margin: 0 3em 0 3em;
-    border: 1px solid var(--border-color-dark);
+    border: 1px solid rgba(var(--accent-color), 0.1);
     border-radius: var(--row-card-radius);
     font-size: .75em;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 
-    .row-card {
+    .row-card, .header{
         display: grid;
         grid-template-columns: var(--template-column);
         padding: 1em;
         background-color: var(--row-card-bg);
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 1px solid rgba(var(--accent-color), 0.07);
 
-        .row-card-details {
+        .row-card-details, .header {
             display: flex;
             padding: .25em;
+            a{
+                color: rgb(var(--accent-color));
+                text-decoration: none;
+            }
         }
     }
 
@@ -55,7 +57,8 @@ body {
         font-weight: bold;
         position: sticky;
         top: 0;
-        background-color: var(--border-color);
+        background-color: rgba(var(--accent-color), 0.08);
+        backdrop-filter: blur(15px);
         border-radius: var(--row-card-radius) var(--row-card-radius) 0 0;
     }
 
