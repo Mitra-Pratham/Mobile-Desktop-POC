@@ -36,7 +36,7 @@ function childrenDiv(el, header){
 
     for (const [key, value] of Object.entries(el)) {
         if(key === 'Name'){
-            tempDiv +=`<div class="row-card-details"><span class="label">${key}: </span><a href="#" onclick="openPanel('${value}')">${value}</a></div>`;
+            tempDiv +=`<div class="row-card-details"><span class="label">${key}: </span><a href="#" class="name-link">${value}</a></div>`;
         }
         else{
             tempDiv +=`<div class="row-card-details"><span class="label">${key}: </span>${value}</div>`;
@@ -46,3 +46,16 @@ function childrenDiv(el, header){
 }
 
 $('#table').append(htmlTable);
+
+
+function openPanel(name){
+        $('#sidepanel').show();
+}
+
+$('.name-link').on('click', function(){
+    $('#sidepanel').show();
+})
+
+$('#close-panel').on('click', function(){
+    $('#sidepanel').hide();
+})

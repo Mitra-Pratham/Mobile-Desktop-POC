@@ -69,6 +69,19 @@ body {
     }
 }
 
+#sidepanel{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25vw;
+    height: 100vh;
+    background-color: var(--row-card-bg);
+    padding: 1.5em;
+    box-shadow: 4px 4px 16px rgba(var(--accent-color), 0.15);
+    border: 1px solid rgba(var(--accent-color), 0.1);
+}
+
 @container style(--isMobile: true) {
     #table {
         margin: 0 1em 0 1em;
@@ -76,5 +89,8 @@ body {
         .row-card:first-child {
             border-radius: var(--row-card-radius) var(--row-card-radius) 0 0;
         }
+    }
+    #sidepanel{
+        width: 100vw;
     }
 }
