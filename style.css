@@ -11,12 +11,26 @@
 
 html,
 body {
-    font-family: sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
 }
 
 body {
     background-color: rgba(var(--accent-color), 0.05);
+}
+
+.btn-no-bg {
+    color: rgb(var(--accent-color));
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    padding: .25em .35em;
+    cursor: pointer;
+    transition: .2s ease-in all;
+}
+
+.btn-no-bg:hover {
+    background-color: rgba(var(--accent-color), 0.2);
 }
 
 #table {
@@ -27,17 +41,20 @@ body {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 
-    .row-card, .header{
+    .row-card,
+    .header {
         display: grid;
         grid-template-columns: var(--template-column);
         padding: 1em;
         background-color: var(--row-card-bg);
         border-bottom: 1px solid rgba(var(--accent-color), 0.07);
 
-        .row-card-details, .header {
+        .row-card-details,
+        .header {
             display: flex;
             padding: .25em;
-            a{
+
+            a {
                 color: rgb(var(--accent-color));
                 text-decoration: none;
             }
@@ -69,7 +86,7 @@ body {
     }
 }
 
-#sidepanel{
+#sidepanel {
     display: none;
     position: fixed;
     top: 0;
@@ -77,20 +94,69 @@ body {
     width: 25vw;
     height: 100vh;
     background-color: var(--row-card-bg);
-    padding: 1.5em;
     box-shadow: 4px 4px 16px rgba(var(--accent-color), 0.15);
     border: 1px solid rgba(var(--accent-color), 0.1);
+
+    .sidepanel-header {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: .25em;
+        padding: 1.25em;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(var(--accent-color), 0.1);
+
+        h3 {
+            margin: 0;
+        }
+
+        #close-panel {
+            font-size: 1.25em;
+        }
+    }
+
+    #panel-details {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: .5em;
+        padding: 1.25em;
+
+        .row-card-details {
+            font-size: .8em;
+            display: grid;
+            grid-template-columns: auto 70%;
+            gap: .5em;
+        }
+
+        .label {
+            color: #777;
+            padding-right: .3em;
+        }
+    }
+
 }
+
+
 
 @container style(--isMobile: true) {
     #table {
         margin: 0 1em 0 1em;
+        font-size: .8em;
 
         .row-card:first-child {
             border-radius: var(--row-card-radius) var(--row-card-radius) 0 0;
         }
     }
-    #sidepanel{
+
+    #sidepanel {
         width: 100vw;
+        #panel-details {
+            .row-card-details {
+                font-size: .9em;
+                grid-template-columns: auto 80%;
+            }
+        }
     }
+
+    
 }
